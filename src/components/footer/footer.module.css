@@ -1,0 +1,79 @@
+footer {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.constrained-container {
+  display: flex;
+  max-width: 1970px;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.logo-figure {
+  align-items: center;
+  justify-content: center;
+  margin: 0 0 0 2rem;
+  gap: 0.5rem;
+  cursor: default;
+  color: #18182a;
+  font-weight: bold;
+  display: none;
+}
+
+.link-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin: 0;
+  gap: 1rem;
+}
+
+.constrained-container a {
+  color: #18182a;
+  text-decoration: none;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+}
+
+.constrained-container a:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #18182a;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.constrained-container a:hover:after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
+}
+
+@media only screen and (min-width: 600px) {
+  .logo-figure {
+    display: flex;
+  }
+
+  .link-container {
+    justify-content: flex-end;
+    margin: 0 2rem 0 0;
+  }
+
+  .constrained-container a {
+    font-size: 1rem;
+  }
+}
